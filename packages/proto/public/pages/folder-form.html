@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add/Edit Folder</title>
+		<link rel="stylesheet" href="/styles/page.css" />
+	</head>
+	<body>
+		<header>
+			<h1><a href="/">Arcana</a></h1>
+			<nav>
+				<ul>
+					<ul>
+						<a href="/pages/folder.html">Folder</a>
+					</ul>
+				</ul>
+			</nav>
+			<main>
+				<h2>Add/Edit Folder</h2>
+				<img
+					src="/assets/folder.png"
+					alt="Folder Image"
+					style="width: 200px; height: auto" />
+				<button onclick="editImage()">Edit Image</button>
+				<p>This is a description for the folder page.</p>
+				<dl class="">
+					<dt><b>Title</b></dt>
+					<dd>
+						The title of the folder.
+						<button onclick="clearEntry()">Clear</button>
+					</dd>
+					<dt><b>Entries</b></dt>
+					<dd>
+						The number of entries in the folder.
+						<button onclick="clearEntry()">Clear</button>
+					</dd>
+					<dt><b>Notes</b></dt>
+					<dd>
+						Any additional notes for the folder.
+						<button onclick="clearEntry()">Clear</button>
+					</dd>
+				</dl>
+			</main>
+			<button onclick="cancelForm()">Cancel</button>
+			<button onclick="saveFolder()">Save</button>
+			<button onclick="deleteFolder()">Delete</button>
+		</header>
+	</body>
+</html>
