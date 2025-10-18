@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add / Edit Item</title>
+		<link rel="stylesheet" href="/styles/reset.css" />
+		<link rel="stylesheet" href="/styles/tokens.css" />
+		<link rel="stylesheet" href="/styles/page.css" />
+		<link rel="stylesheet" href="/styles/form.css" />
+		<link rel="stylesheet" href="/styles/button.css" />
+	</head>
+	<body class="page">
+		<header class="site-header">
+			<div class="brand">
+				<svg class="icon">
+					<use href="/icons/library.svg#icon-library" />
+				</svg>
+				<h1 class="brand-name"><a href="/">Arcana</a></h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="/pages/folder.html">Folders</a></li>
+					<li><a href="/pages/bookmark.html">Bookmarks</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section class="editor">
+				<header class="editor-header">
+					<h2 id="editor-title">Add / Edit Item</h2>
+				</header>
+
+				<div class="preview">
+					<img
+						class="cover"
+						src="/assets/folder.png"
+						alt="Preview image" />
+					<button
+						type="button"
+						class="secondary"
+						onclick="editImage()">
+						Edit Image
+					</button>
+				</div>
+
+				<div class="form-section">
+					<label for="item-title" class="field">
+						<span class="field-label">Title</span>
+						<input
+							type="text"
+							id="item-title"
+							name="title"
+							placeholder="Enter title" />
+					</label>
+
+					<label for="item-description" class="field">
+						<span class="field-label">Description</span>
+						<textarea
+							id="item-description"
+							name="description"
+							rows="3"
+							placeholder="Enter description"></textarea>
+					</label>
+
+					<label for="item-notes" class="field">
+						<span class="field-label">Notes</span>
+						<textarea
+							id="item-notes"
+							name="notes"
+							rows="3"
+							placeholder="Additional notes"></textarea>
+					</label>
+				</div>
+
+				<div class="form-actions">
+					<button
+						type="button"
+						class="secondary"
+						onclick="cancelForm()">
+						Cancel
+					</button>
+					<button
+						type="button"
+						class="primary"
+						onclick="saveEntity()">
+						Save
+					</button>
+					<button
+						type="button"
+						class="danger"
+						onclick="deleteEntity()">
+						Delete
+					</button>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

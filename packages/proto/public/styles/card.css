@@ -1,0 +1,40 @@
+/* ---------- Card Components ---------- */
+.card {
+	grid-column: span min(2, var(--page-grids));
+	background-color: var(--color-surface);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-md);
+	overflow: hidden;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-lg);
+}
+
+.card img {
+	width: 100%;
+	object-fit: contain;
+	background-color: var(--color-surface-variant);
+}
+
+.card .card-info {
+	padding: var(--space-sm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	flex: 1;
+}
+
+.card h4 {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-primary);
+}
+
+.card p {
+	font-size: var(--font-size-sm);
+	color: var(--color-text);
+}

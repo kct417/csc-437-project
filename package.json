@@ -1,5 +1,5 @@
 {
-	"name": "csc-427-project",
+	"name": "csc-437-project",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -9,14 +9,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/kct417/csc-427-project.git"
+		"url": "git+https://github.com/kct417/csc-437-project.git"
 	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/kct417/csc-427-project/issues"
+		"url": "https://github.com/kct417/csc-437-project/issues"
 	},
-	"homepage": "https://github.com/kct417/csc-427-project#readme",
+	"homepage": "https://github.com/kct417/csc-437-project#readme",
 	"workspaces": [
 		"packages/*"
 	]

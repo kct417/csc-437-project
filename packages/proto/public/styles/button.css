@@ -1,0 +1,40 @@
+button {
+	padding: 0.5rem 1rem;
+	border-radius: var(--radius-md);
+	border: none;
+	cursor: pointer;
+	font-weight: var(--font-weight-semibold);
+	transition: background-color 0.2s ease-in-out;
+}
+
+button.primary {
+	background-color: var(--color-primary);
+	color: var(--color-text-inverted);
+}
+
+button.primary:hover {
+	background-color: var(--color-primary-hover);
+}
+
+button.secondary {
+	background-color: var(--color-secondary);
+	color: var(--color-text);
+}
+
+button.secondary:hover {
+	background-color: rgb(180, 180, 180);
+}
+
+button.danger {
+	background-color: var(--color-danger);
+	color: var(--color-text-inverted);
+}
+
+button.danger:hover {
+	background-color: rgb(180, 30, 30);
+}
+
+button.small {
+	font-size: var(--font-size-sm);
+	padding: 0.25rem 0.5rem;
+}

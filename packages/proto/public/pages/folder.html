@@ -4,42 +4,133 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Folder Name</title>
+		<link rel="stylesheet" href="/styles/reset.css" />
+		<link rel="stylesheet" href="/styles/tokens.css" />
 		<link rel="stylesheet" href="/styles/page.css" />
+		<link rel="stylesheet" href="/styles/card.css" />
 	</head>
 	<body>
-		<header>
-			<h1><a href="/">Arcana</a></h1>
+		<header class="site-header">
+			<div class="brand">
+				<svg class="icon">
+					<use href="/icons/folder.svg#icon-folder" />
+				</svg>
+				<h1 class="brand-name"><a href="/">Arcana</a></h1>
+			</div>
 			<nav>
 				<ul>
-					<ul>
-						<a href="/pages/folder-form.html">Edit Folder</a>
-					</ul>
-					<ul>
-						<a href="/pages/bookmark-form.html">Add Bookmark</a>
-					</ul>
+					<li>
+						<a href="/pages/form.html">Add Bookmark</a>
+					</li>
+					<li><a href="/pages/form.html">Edit</a></li>
 				</ul>
 			</nav>
-			<main>
-				<img
-					src="/assets/folder.png"
-					alt="Folder Image"
-					style="width: 200px; height: auto" />
-				<h2>Folder Name</h2>
-				<p>This is a description for the folder page.</p>
-				<dl class="">
-					<dt><b>Entries</b></dt>
-					<dd>The number of entries in the folder.</dd>
-					<dt><b>Notes</b></dt>
-					<dd>Any additional notes for the folder.</dd>
-				</dl>
-				<ul>
-					<li>
-						<a href="/pages/bookmark.html">Bookmark</a>
-					</li>
-					<li>Entry 2</li>
-					<li>Entry 3</li>
-				</ul>
-			</main>
 		</header>
+		<main>
+			<section class="header">
+				<img
+					class="cover"
+					src="/assets/folder.png"
+					alt="Folder cover" />
+				<div class="card-info">
+					<h2>Folder Name</h2>
+					<p class="description">
+						This is a description for the folder page.
+					</p>
+					<dl class="details">
+						<div class="detail-row">
+							<dt>Entries</dt>
+							<dd>The number of entries in the folder.</dd>
+						</div>
+						<div class="detail-row">
+							<dt>Notes</dt>
+							<dd>Any additional notes for the folder.</dd>
+						</div>
+					</dl>
+				</div>
+			</section>
+			<section class="cards">
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+				<a href="/pages/bookmark.html" class="card">
+					<img
+						class="cover"
+						src="/assets/bookmark.png"
+						alt="Bookmark cover" />
+					<div class="card-info">
+						<h4>Bookmark Name</h4>
+						<p>Author Name</p>
+					</div>
+				</a>
+			</section>
+		</main>
 	</body>
 </html>

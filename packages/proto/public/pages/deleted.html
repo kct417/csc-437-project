@@ -4,38 +4,82 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Deleted Entries</title>
+		<link rel="stylesheet" href="/styles/reset.css" />
+		<link rel="stylesheet" href="/styles/tokens.css" />
 		<link rel="stylesheet" href="/styles/page.css" />
+		<link rel="stylesheet" href="/styles/button.css" />
 	</head>
-	<body>
-		<header>
-			<h1><a href="/">Arcana</a></h1>
+
+	<body class="page">
+		<header class="site-header">
+			<div class="brand">
+				<svg class="icon">
+					<use href="/icons/book.svg#icon-book" />
+				</svg>
+				<h1 class="brand-name"><a href="/">Arcana</a></h1>
+			</div>
 			<nav>
 				<ul>
-					<li>
-						<a href="/pages/folder.html">Folder</a>
-						<button onclick="restore()">Restore</button>
-					</li>
-					<li>
-						Entry 2 <button onclick="restore()">Restore</button>
-					</li>
-					<li>
-						Entry 3 <button onclick="restore()">Restore</button>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<a href="/pages/bookmark.html">Bookmark</a>
-						<button onclick="restore()">Restore</button>
-					</li>
-					<li>
-						Entry 2 <button onclick="restore()">Restore</button>
-					</li>
-					<li>
-						Entry 3 <button onclick="restore()">Restore</button>
-					</li>
+					<li><a href="/pages/folder.html">Folders</a></li>
+					<li><a href="/pages/bookmark.html">Bookmarks</a></li>
 				</ul>
 			</nav>
-			<button onclick="clearDeleted()">Clear Deleted</button>
 		</header>
+
+		<main>
+			<section>
+				<h2>Deleted Folders</h2>
+				<ul>
+					<li>
+						<span>Folder 1</span>
+						<button class="primary small" onclick="restore()">
+							Restore
+						</button>
+					</li>
+					<li>
+						<span>Folder 2</span>
+						<button class="primary small" onclick="restore()">
+							Restore
+						</button>
+					</li>
+					<li>
+						<span>Folder 3</span>
+						<button class="primary small" onclick="restore()">
+							Restore
+						</button>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Deleted Bookmarks</h2>
+				<ul>
+					<li>
+						<span>Bookmark 1</span>
+						<button class="primary small" onclick="restore()">
+							Restore
+						</button>
+					</li>
+					<li>
+						<span>Bookmark 2</span>
+						<button class="primary small" onclick="restore()">
+							Restore
+						</button>
+					</li>
+					<li>
+						<span>Bookmark 3</span>
+						<button class="primary small" onclick="restore()">
+							Restore
+						</button>
+					</li>
+				</ul>
+			</section>
+
+			<div>
+				<button class="danger" onclick="clearDeleted()">
+					Clear All Deleted
+				</button>
+			</div>
+		</main>
 	</body>
 </html>

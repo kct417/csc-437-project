@@ -1,0 +1,107 @@
+/* ---------- Global Styles ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-serif);
+	color: var(--color-primary);
+}
+
+body {
+	font-family: var(--font-sans);
+	color: var(--color-text);
+	background-color: var(--color-background);
+}
+
+a {
+	color: var(--color-link);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--color-link-hover);
+}
+
+svg.icon {
+	display: inline;
+	height: 3em;
+	width: 3em;
+	vertical-align: top;
+	fill: currentColor;
+}
+
+/* ---------- Header ---------- */
+header.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-header-background);
+	box-shadow: var(--shadow-sm);
+	padding-right: var(--space-lg);
+}
+
+header nav ul {
+	list-style: none;
+	display: flex;
+	gap: var(--space-md);
+}
+
+header nav ul li a {
+	font-size: large;
+	font-weight: var(--font-weight-semibold);
+}
+
+header.site-header div.brand {
+	display: flex;
+	place-items: center;
+	font-size: var(--font-size-xxl);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-primary);
+}
+
+header.site-header div.brand h1 {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+/* ---------- Page Layout ---------- */
+main {
+	background-color: var(--color-surface);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-md);
+	gap: var(--space-lg);
+	padding: var(--space-lg);
+	margin: var(--space-lg);
+}
+
+main .header,
+main .editor {
+	display: grid;
+	grid-template-columns: repeat(var(--page-grids), 1fr);
+	padding: inherit;
+}
+
+main .cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+	gap: inherit;
+}
+
+main .card-info {
+	grid-column: span 4;
+	padding: inherit;
+}
+
+main .cover {
+	grid-column: span 2;
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-sm);
+}
+
+main .details dl {
+	grid-column: span 4;
+	gap: var(--space-sm);
+}

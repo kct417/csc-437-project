@@ -4,41 +4,64 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Bookmark Name</title>
+		<link rel="stylesheet" href="/styles/reset.css" />
+		<link rel="stylesheet" href="/styles/tokens.css" />
 		<link rel="stylesheet" href="/styles/page.css" />
+		<link rel="stylesheet" href="/styles/card.css" />
 	</head>
 	<body>
-		<header>
-			<h1><a href="/">Arcana</a></h1>
+		<header class="site-header">
+			<div class="brand">
+				<svg class="icon">
+					<use href="/icons/bookmark.svg#icon-bookmark" />
+				</svg>
+				<h1 class="brand-name"><a href="/">Arcana</a></h1>
+			</div>
 			<nav>
 				<ul>
-					<ul>
-						<a href="/pages/folder.html">Return To Folder</a>
-					</ul>
-					<ul>
-						<a href="/pages/bookmark-form.html">Edit Bookmark</a>
-					</ul>
+					<li><a href="/pages/folder.html">Return</a></li>
+					<li>
+						<a href="/pages/form.html">Edit</a>
+					</li>
 				</ul>
 			</nav>
-			<main>
+		</header>
+
+		<main>
+			<section class="header">
 				<img
 					src="/assets/bookmark.png"
-					alt="Bookmark Image"
-					style="width: 200px; height: auto" />
-				<h2>Bookmark Name</h2>
-				<p>This is a description for the bookmark page.</p>
-				<dl class="">
-					<dt><b>Author</b></dt>
-					<dd>The author of the bookmark.</dd>
-					<dt><b>Chapter</b></dt>
-					<dd>The chapter of the bookmark.</dd>
-					<dt><b>Page</b></dt>
-					<dd>The page number of the bookmark.</dd>
-					<dt><b>Folder</b></dt>
-					<dd>The folder where the bookmark is stored.</dd>
-					<dt><b>Notes</b></dt>
-					<dd>Any additional notes for the bookmark.</dd>
-				</dl>
-			</main>
-		</header>
+					alt="Bookmark cover"
+					class="cover" />
+				<div class="card-info">
+					<h2>Bookmark Name</h2>
+					<p class="description">
+						This is a description for the bookmark page.
+					</p>
+					<dl class="details">
+						<div class="detail-row">
+							<dt>Author</dt>
+							<dd>The author of the bookmark.</dd>
+						</div>
+						<div class="detail-row">
+							<dt>Chapter</dt>
+							<dd>The chapter of the bookmark.</dd>
+						</div>
+						<div class="detail-row">
+							<dt>Page</dt>
+							<dd>The page number of the bookmark.</dd>
+						</div>
+						<div class="detail-row">
+							<dt>Folder</dt>
+							<dd>The folder where the bookmark is stored.</dd>
+						</div>
+						<div class="detail-row">
+							<dt>Notes</dt>
+							<dd>Any additional notes for the bookmar</dd>
+						</div>
+					</dl>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
