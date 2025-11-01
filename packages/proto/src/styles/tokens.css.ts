@@ -1,0 +1,105 @@
+import { css } from 'lit';
+
+const styles = css`
+	:root {
+		/* ---------- Global Styles ---------- */
+		--page-grids: 12;
+
+		/* ---------- Colors ---------- */
+		--color-primary: rgb(45, 105, 220);
+		--color-primary-hover: rgb(30, 85, 190);
+		--color-secondary: rgb(220, 230, 245);
+		--color-danger: rgb(220, 60, 60);
+		--color-text: rgb(35, 40, 50);
+		--color-text-inverted: rgb(255, 255, 255);
+		--color-background: rgb(245, 247, 250);
+		--color-header-background: rgb(230, 240, 245);
+		--color-surface: rgb(255, 255, 255);
+		--color-border: rgb(210, 215, 225);
+		--color-link: var(--color-primary);
+		--color-link-hover: var(--color-primary-hover);
+
+		/* --color-background: #f7f8fa;
+	--color-surface: #ffffff;
+	--color-text: #1e1e1e;
+
+	--color-header-bg: #1a237e;
+	--color-header-text: #ffffff;
+
+	--color-primary: #3949ab;
+	--color-primary-hover: #5c6bc0;
+	--color-link: #3949ab;
+	--color-link-hover: #5c6bc0;
+
+	--color-surface-variant: #e0e3f1;
+	--color-danger: #d32f2f;
+	--color-secondary: #e0e0e0;
+	--color-text-inverted: #ffffff; */
+
+		/* ---------- Typography ---------- */
+		--font-sans: 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
+		--font-serif: 'Playfair Display', Georgia, 'Times New Roman', Times,
+			serif;
+		--font-size-xs: 0.75rem;
+		--font-size-sm: 0.875rem;
+		--font-size-md: 1rem;
+		--font-size-lg: 1.25rem;
+		--font-size-xl: 1.75rem;
+		--font-size-xxl: 2.5rem;
+		--font-weight-regular: 400;
+		--font-weight-semibold: 600;
+		--font-weight-bold: 700;
+
+		/* ---------- Spacing ---------- */
+		--space-xs: 0.25rem;
+		--space-sm: 0.5rem;
+		--space-md: 1rem;
+		--space-lg: 1.5rem;
+		--space-xl: 2rem;
+
+		/* ---------- Border Radius ---------- */
+		--radius-sm: 4px;
+		--radius-md: 8px;
+		--radius-lg: 12px;
+
+		/* ---------- Shadow ---------- */
+		--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+		--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+		--shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	@media screen and (max-width: 50rem) {
+		.page {
+			--page-grids: 4;
+		}
+	}
+
+	@media screen and (max-width: 30rem) {
+		.page {
+			--page-grids: 2;
+		}
+	}
+
+	@media screen and (min-width: 100rem) {
+		.page {
+			--page-grids: 24;
+		}
+	}
+
+	body.dark-mode {
+		--color-primary: rgb(100, 150, 255);
+		--color-primary-hover: rgb(130, 170, 255);
+		--color-secondary: rgb(45, 50, 60);
+		--color-danger: rgb(255, 90, 90);
+		--color-text: rgb(235, 240, 250);
+		--color-text-inverted: rgb(20, 25, 35);
+		--color-background: rgb(20, 25, 35);
+		--color-header-background: rgb(30, 35, 45);
+		--color-surface: rgb(35, 40, 50);
+		--color-border: rgb(60, 65, 75);
+		--color-link: var(--color-primary);
+		--color-link-hover: var(--color-primary-hover);
+	}
+`;
+
+export default { styles };

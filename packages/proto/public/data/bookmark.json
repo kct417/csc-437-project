@@ -1,0 +1,17 @@
+{
+	"image": "/images/bookmark.png",
+	"name": "Sample Bookmark",
+	"description": "A brief description of the bookmark.",
+	"author": "John Doe",
+	"chapter": "Introduction to Proto",
+	"page": 5,
+	"details": [
+		{ "key": "Genre", "value": "Educational" },
+		{ "key": "Language", "value": "English" }
+	],
+	"metadata": [
+		{ "key": "Created", "value": "2024-01-15" },
+		{ "key": "Last Modified", "value": "2024-06-10" }
+	],
+	"url": "https://example.com/bookmark"
+}

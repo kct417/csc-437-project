@@ -1,0 +1,77 @@
+{
+	"image": "/images/folder.png",
+	"name": "My Folder",
+	"description": "A container for organizing files and other folders.",
+	"details": [
+		{
+			"key": "Type",
+			"value": "Personal"
+		},
+		{
+			"key": "Entries",
+			"value": "8 Bookmarks"
+		},
+		{
+			"key": "Owner",
+			"value": "student"
+		},
+		{
+			"key": "Visibility",
+			"value": "Private"
+		}
+	],
+	"metadata": [
+		{ "key": "Created", "value": "2024-01-15" },
+		{ "key": "Modified", "value": "2024-06-10" }
+	],
+	"bookmarks": [
+		{
+			"name": "Bookmark A",
+			"author": "A Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark B",
+			"author": "B Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark A",
+			"author": "A Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark B",
+			"author": "B Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark A",
+			"author": "A Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark B",
+			"author": "B Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark A",
+			"author": "A Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		},
+		{
+			"name": "Bookmark B",
+			"author": "B Team",
+			"image": "/images/bookmark.png",
+			"url": "/bookmark.html"
+		}
+	]
+}

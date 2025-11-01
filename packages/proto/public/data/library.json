@@ -1,0 +1,23 @@
+{
+	"username": "student",
+	"folders": [
+		{
+			"image": "/images/folder.png",
+			"name": "Course Materials",
+			"entries": 5,
+			"url": "/folder.html"
+		},
+		{
+			"image": "/images/folder.png",
+			"name": "Research",
+			"entries": 12,
+			"url": "/folder.html"
+		},
+		{
+			"image": "/images/folder.png",
+			"name": "Personal",
+			"entries": 8,
+			"url": "/folder.html"
+		}
+	]
+}

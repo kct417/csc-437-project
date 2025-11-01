@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{ "name": "Folder 1" },
+		{ "name": "Folder 2" },
+		{ "name": "Folder 3" }
+	],
+	"bookmarks": [
+		{ "name": "Bookmark 1" },
+		{ "name": "Bookmark 2" },
+		{ "name": "Bookmark 3" }
+	]
+}

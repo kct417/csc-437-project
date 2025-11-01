@@ -5,6 +5,11 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "cd packages/proto && npm start",
+		"start:proto": "cd packages/proto && npm start",
+		"start:server": "cd packages/server && npm start",
+		"dev": "cd packages/proto && npm run dev",
+		"dev:proto": "cd packages/proto && npm run dev",
+		"dev:server": "cd packages/server && npm run dev",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {

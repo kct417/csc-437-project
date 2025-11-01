@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Folder Name</title>
+		<link rel="stylesheet" href="/styles/reset.css" />
+		<link rel="stylesheet" href="/styles/tokens.css" />
+		<link rel="stylesheet" href="/styles/page.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet" />
+		<script type="module">
+			import { define } from '@calpoly/mustang';
+			import { HeaderElement } from '/src/header.js';
+			import { FolderElement } from '/src/folder.js';
+			define({
+				'header-element': HeaderElement,
+				'folder-element': FolderElement,
+			});
+		</script>
+	</head>
+	<body>
+		<header-element
+			src-svg="/icons/folder.svg#icon-folder"
+			links='[["Add","/form.html"],["Edit","/form.html"], ["Back","/"]]'></header-element>
+		<main>
+			<folder-element src="/data/folder.json"></folder-element>
+		</main>
+	</body>
+</html>
