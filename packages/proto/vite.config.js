@@ -13,7 +13,14 @@ export default defineConfig({
 				bookmark: resolve(__dirname, 'bookmark.html'),
 				form: resolve(__dirname, 'form.html'),
 				deleted: resolve(__dirname, 'deleted.html'),
+				login: resolve(__dirname, 'login.html'),
 			},
+		},
+	},
+	server: {
+		proxy: {
+			'/api': 'http://localhost:3000',
+			'/auth': 'http://localhost:3000',
 		},
 	},
 });

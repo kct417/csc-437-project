@@ -13,22 +13,29 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
 			rel="stylesheet" />
 		<script type="module">
-			import { define } from '@calpoly/mustang';
-			import { HeaderElement } from '/src/header.js';
-			import { LibraryElement } from '/src/library.js';
+			import { define, Auth } from '@calpoly/mustang';
+			import { ContentElement } from '/src/components/content.js';
+			import { HeaderElement } from '/src/components/header.js';
+			import { LibraryElement } from '/src/components/library.js';
 			define({
+				'mu-auth': Auth.Provider,
+				'content-element': ContentElement,
 				'header-element': HeaderElement,
 				'library-element': LibraryElement,
 			});
+			HeaderElement.initializeOnce();
 		</script>
 	</head>
 	<body>
-		<header-element
-			src-svg="/icons/book.svg#icon-book"
-			links='[["Deleted","/deleted.html"],["Add","/form.html"]]'>
-		</header-element>
-		<main>
-			<library-element src="/data/library.json"></library-element>
-		</main>
+		<mu-auth provides="arcana:auth">
+			<content-element>
+				<header-element
+					slot="header"
+					src-svg="/icons/book.svg#icon-book"
+					links='[["Deleted","/deleted.html"],["Add","/folder-form.html"]]'>
+				</header-element>
+				<library-element slot="content"></library-element>
+			</content-element>
+		</mu-auth>
 	</body>
 </html>

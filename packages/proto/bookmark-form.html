@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bookmark Name</title>
+		<title>Add / Edit Item</title>
 		<link rel="stylesheet" href="/styles/reset.css" />
 		<link rel="stylesheet" href="/styles/tokens.css" />
 		<link rel="stylesheet" href="/styles/page.css" />
@@ -14,13 +14,12 @@
 			rel="stylesheet" />
 		<script type="module">
 			import { define } from '@calpoly/mustang';
-			import { ContentElement } from '/src/components/content.js';
 			import { HeaderElement } from '/src/components/header.js';
-			import { BookmarkElement } from '/src/components/bookmark.js';
+			import { BookmarkFormElement } from '/src/components/bookmark-form.js';
 			define({
 				'content-element': ContentElement,
 				'header-element': HeaderElement,
-				'bookmark-element': BookmarkElement,
+				'bookmark-form-element': BookmarkFormElement,
 			});
 			HeaderElement.initializeOnce();
 		</script>
@@ -30,12 +29,12 @@
 			<content-element>
 				<header-element
 					slot="header"
-					src-svg="/icons/bookmark.svg#icon-bookmark"
-					links='[["Edit","/form.html"],["Back","/folder.html"]]'>
+					src-svg="/icons/book.svg#icon-book"
+					links='[["Back","/"]]'>
 				</header-element>
-				<bookmark-element
+				<bookmark-form-element
 					slot="content"
-					src="/data/bookmark.json"></bookmark-element>
+					src-image="/images/bookmark.png"></bookmark-form-element>
 			</content-element>
 		</mu-auth>
 	</body>

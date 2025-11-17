@@ -1,15 +1,38 @@
 import { html, LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import reset from './styles/reset.css.ts';
-import page from './styles/page.css.ts';
-import buttonStyles from './styles/button.css.ts';
+import { Auth, Observer } from '@calpoly/mustang';
+
+import reset from '../styles/reset.css';
+import page from '../styles/page.css';
+import button from '../styles/button.css.ts';
 
 interface DeletedItem {
 	name: string;
 }
 
-export class DeletedEntriesElement extends LitElement {
-	static styles = [reset.styles, page.styles, buttonStyles.styles];
+export class DeletedElement extends LitElement {
+	static styles = [reset.styles, page.styles, button.styles];
+
+	_authObserver = new Observer<Auth.Model>(this, 'arcana:auth');
+	_user?: Auth.User;
+
+	get authorization() {
+		return (
+			this._user?.authenticated && {
+				Authorization: `Bearer ${
+					(this._user as Auth.AuthenticatedUser).token
+				}`,
+			}
+		);
+	}
+
+	connectedCallback() {
+		super.connectedCallback();
+		this._authObserver.observe((auth: Auth.Model) => {
+			this._user = auth.user;
+		});
+		if (this.src) this.hydrate(this.src);
+	}
 
 	@property()
 	src?: string;
@@ -30,11 +53,6 @@ export class DeletedEntriesElement extends LitElement {
 
 	private clearAllDeleted() {
 		console.log('Clearing all deleted items');
-	}
-
-	connectedCallback() {
-		super.connectedCallback();
-		if (this.src) this.hydrate(this.src);
 	}
 
 	hydrate(src: string) {

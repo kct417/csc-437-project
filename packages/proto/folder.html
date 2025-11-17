@@ -14,20 +14,26 @@
 			rel="stylesheet" />
 		<script type="module">
 			import { define } from '@calpoly/mustang';
-			import { HeaderElement } from '/src/header.js';
-			import { FolderElement } from '/src/folder.js';
+			import { ContentElement } from '/src/components/content.js';
+			import { HeaderElement } from '/src/components/header.js';
+			import { FolderElement } from '/src/components/folder.js';
 			define({
+				'content-element': ContentElement,
 				'header-element': HeaderElement,
 				'folder-element': FolderElement,
 			});
+			HeaderElement.initializeOnce();
 		</script>
 	</head>
 	<body>
-		<header-element
-			src-svg="/icons/folder.svg#icon-folder"
-			links='[["Add","/form.html"],["Edit","/form.html"], ["Back","/"]]'></header-element>
-		<main>
-			<folder-element src="/data/folder.json"></folder-element>
-		</main>
+		<mu-auth provides="arcana:auth">
+			<content-element>
+				<header-element
+					slot="header"
+					src-svg="/icons/folder.svg#icon-folder"
+					links='[["Add","/bookform-form.html"], ["Back","/"]]'></header-element>
+				<folder-element slot="content"></folder-element>
+			</content-element>
+		</mu-auth>
 	</body>
 </html>
