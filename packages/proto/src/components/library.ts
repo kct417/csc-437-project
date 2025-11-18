@@ -16,8 +16,6 @@ interface Library {
 export class LibraryElement extends LitElement {
 	static styles = [reset.styles, page.styles, card.styles];
 
-	src: string = 'api/users';
-
 	@state()
 	library: Library = {
 		username: '',
@@ -43,12 +41,12 @@ export class LibraryElement extends LitElement {
 		super.connectedCallback();
 		this._authObserver.observe((auth: Auth.Model) => {
 			this._user = auth.user;
-			if (this.src) this.hydrate(this.src);
+			this.hydrate();
 		});
 	}
 
-	hydrate(src: string) {
-		const url = `${src}`;
+	hydrate() {
+		const url = `/api/library`;
 		fetch(url, { headers: this.authorization })
 			.then((res) => res.json())
 			.then((json: object) => {
@@ -64,9 +62,15 @@ export class LibraryElement extends LitElement {
 	render() {
 		return html`
 			<section class="content grid">
+				<a href="folder.html" class="card">
+					<img src="/images/folder.png" alt="Folder cover" />
+					<div class="card-content">
+						<h4>Test</h4>
+					</div>
+				</a>
 				${this.library.folders.map(
 					(folder) => html`
-						<a href="/folder.html" class="card">
+						<a href="folder.html" class="card">
 							<img
 								src="${folder.image || '/images/folder.png'}"
 								alt="Folder cover" />
