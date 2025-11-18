@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "npm run start:server",
 		"start:proto": "cd packages/proto && npm start",
-		"start:server": "cd packages/server && npm start",
+		"start:server": "cd packages/server && npm start:proto",
 		"dev": "cd packages/proto && npm run dev",
 		"dev:proto": "cd packages/proto && npm run dev",
 		"dev:server": "cd packages/server && npm run dev",
