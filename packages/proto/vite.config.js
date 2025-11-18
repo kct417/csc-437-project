@@ -15,6 +15,7 @@ export default defineConfig({
 				bookmark_form: resolve(__dirname, 'bookmark-form.html'),
 				deleted: resolve(__dirname, 'deleted.html'),
 				login: resolve(__dirname, 'login.html'),
+				register: resolve(__dirname, 'register.html'),
 			},
 		},
 	},

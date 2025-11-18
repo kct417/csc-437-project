@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "cd packages/proto && npm start",
+		"start": "npm run start:server",
 		"start:proto": "cd packages/proto && npm start",
 		"start:server": "cd packages/server && npm start",
 		"dev": "cd packages/proto && npm run dev",

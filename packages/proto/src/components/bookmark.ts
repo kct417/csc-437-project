@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { property, state } from 'lit/decorators.js';
+import { state } from 'lit/decorators.js';
 import { Auth, Observer } from '@calpoly/mustang';
 
 import reset from '../styles/reset.css';
@@ -22,26 +22,25 @@ export class BookmarkElement extends LitElement {
 	_authObserver = new Observer<Auth.Model>(this, 'arcana:auth');
 	_user?: Auth.User;
 
-	get authorization() {
-		return (
-			this._user?.authenticated && {
-				Authorization: `Bearer ${
-					(this._user as Auth.AuthenticatedUser).token
-				}`,
-			}
-		);
+	get authorization(): { Authorization?: string } {
+		if (this._user && this._user.authenticated)
+			return (
+				this._user?.authenticated && {
+					Authorization: `Bearer ${
+						(this._user as Auth.AuthenticatedUser).token
+					}`,
+				}
+			);
+		else return {};
 	}
 
 	connectedCallback() {
 		super.connectedCallback();
 		this._authObserver.observe((auth: Auth.Model) => {
 			this._user = auth.user;
+			this.hydrate();
 		});
-		if (this.src) this.hydrate(this.src);
 	}
-
-	@property()
-	src?: string;
 
 	@state()
 	bookmark: Bookmark = {
@@ -54,8 +53,9 @@ export class BookmarkElement extends LitElement {
 		url: '',
 	};
 
-	hydrate(src: string) {
-		fetch(src)
+	hydrate() {
+		const url = `api/bookmarks/691b0bb235345eaa13d74516`;
+		fetch(url, { headers: this.authorization })
 			.then((res) => res.json())
 			.then((json: object) => {
 				if (json) {

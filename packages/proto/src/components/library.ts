@@ -66,7 +66,7 @@ export class LibraryElement extends LitElement {
 			<section class="content grid">
 				${this.library.folders.map(
 					(folder) => html`
-						<a href="folder.html" class="card">
+						<a href="/folder.html" class="card">
 							<img
 								src="${folder.image || '/images/folder.png'}"
 								alt="Folder cover" />

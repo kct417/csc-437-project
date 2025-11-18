@@ -13,11 +13,12 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
 			rel="stylesheet" />
 		<script type="module">
-			import { define } from '@calpoly/mustang';
+			import { define, Auth } from '@calpoly/mustang';
 			import { ContentElement } from '/src/components/content.js';
 			import { HeaderElement } from '/src/components/header.js';
 			import { FolderElement } from '/src/components/folder.js';
 			define({
+				'mu-auth': Auth.Provider,
 				'content-element': ContentElement,
 				'header-element': HeaderElement,
 				'folder-element': FolderElement,
@@ -31,7 +32,7 @@
 				<header-element
 					slot="header"
 					src-svg="/icons/folder.svg#icon-folder"
-					links='[["Add","/bookform-form.html"], ["Back","/"]]'></header-element>
+					links='[["Add","/bookmark-form.html"], ["Back","/"]]'></header-element>
 				<folder-element slot="content"></folder-element>
 			</content-element>
 		</mu-auth>
