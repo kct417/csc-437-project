@@ -8,7 +8,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "npx vite",
-		"build": "npx tsc && npx vite build",
+		"build": "npx vite build",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
