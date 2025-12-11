@@ -2,7 +2,8 @@ import { Types } from 'mongoose';
 
 export interface Bookmark {
 	_id: Types.ObjectId;
-	folderId: Types.ObjectId;
+	username: string;
+	folderId: string;
 	bookmarkName: string;
 	image?: string;
 	description?: string;
@@ -10,6 +11,4 @@ export interface Bookmark {
 	chapter?: string;
 	page?: number;
 	url?: string;
-	created?: Date;
-	modified?: Date;
 }

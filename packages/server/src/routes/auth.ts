@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { Types } from 'mongoose';
 
 import credentials from '../services/credential-svc';
 
@@ -14,13 +13,17 @@ router.post('/register', (req: Request, res: Response) => {
 	const { username, password } = req.body;
 
 	if (typeof username !== 'string' || typeof password !== 'string') {
-		return res.status(400).send('Bad request: Invalid input data.');
+		res.status(400).send('Bad request: Invalid input data.');
 	} else {
 		credentials
 			.create(username, password)
-			.then((userId) => generateAccessToken(userId))
-			.then((token) => res.status(201).send({ token: token }))
-			.catch((error) => res.status(409).send({ error: error.message }));
+			.then((creds) => generateAccessToken(creds.username))
+			.then((token) => {
+				res.status(201).send({ token: token });
+			})
+			.catch((err) => {
+				res.status(409).send({ error: err.message });
+			});
 	}
 });
 
@@ -32,7 +35,7 @@ router.post('/login', (req: Request, res: Response) => {
 	} else {
 		credentials
 			.verify(username, password)
-			.then((userId) => generateAccessToken(userId))
+			.then((username) => generateAccessToken(username))
 			.then((token) => res.status(200).send({ token: token }))
 			.catch((error) =>
 				res.status(401).send({ error: 'Unauthorized:' + error })
@@ -40,10 +43,10 @@ router.post('/login', (req: Request, res: Response) => {
 	}
 });
 
-function generateAccessToken(userId: Types.ObjectId): Promise<String> {
+function generateAccessToken(username: string): Promise<String> {
 	return new Promise((resolve, reject) => {
 		jwt.sign(
-			{ userId: userId },
+			{ username: username },
 			TOKEN_SECRET,
 			{ expiresIn: '1d' },
 			(error, token) => {
@@ -67,9 +70,8 @@ export function authenticateUser(
 	} else {
 		jwt.verify(token, TOKEN_SECRET, (error, decoded) => {
 			if (decoded) {
-				const payload = decoded as { userId: string };
-				console.log('Authenticated user:', payload);
-				(req as any).user = { userId: payload.userId };
+				const payload = decoded as { username: string };
+				res.locals.username = payload.username;
 				next();
 			} else res.status(401).end();
 		});

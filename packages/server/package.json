@@ -6,10 +6,17 @@
 	"author": "",
 	"type": "commonjs",
 	"main": "dist/index.js",
+	"exports": {
+		"./models": {
+			"import": "./src/models/index.ts"
+		}
+	},
 	"scripts": {
 		"dev": "nodemon",
 		"build": "npx etsc",
 		"start": "npm run build && npm run start:node",
+		"start:api": "cross-env STATIC=./public npm run start",
+		"start:app": "cross-env STATIC=../app/dist npm run start",
 		"start:node": "node dist/index.js",
 		"start:proto": "cross-env STATIC=../proto/dist npm run start",
 		"check": "tsc --noEmit",
@@ -31,6 +38,7 @@
 		"dotenv": "^17.2.3",
 		"express": "^5.1.0",
 		"jsonwebtoken": "^9.0.2",
-		"mongoose": "^8.19.2"
+		"mongoose": "^8.19.2",
+		"uuid": "^13.0.0"
 	}
 }

@@ -2,22 +2,22 @@ import { Schema, model } from 'mongoose';
 
 import { Bookmark } from '../models/bookmark';
 
-export const BookmarkSchema = new Schema<Bookmark>(
+export const bookmarkSchema = new Schema<Bookmark>(
 	{
-		bookmarkName: { type: String, trim: true, required: true },
+		username: { type: String, required: true, trim: true },
+		folderId: { type: String, required: true, trim: true },
+		bookmarkName: { type: String, required: true, trim: true },
 		description: { type: String, trim: true },
-		image: { type: String, trim: true },
+		image: { type: String },
 		author: { type: String, trim: true },
 		chapter: { type: String, trim: true },
 		page: { type: Number },
 		url: { type: String, trim: true },
-		created: { type: Date, default: Date.now },
-		modified: { type: Date, default: Date.now },
 	},
 	{ collection: 'bookmarks' }
 );
 
-export const BookmarkModel = model<Bookmark>('Bookmark', BookmarkSchema);
+export const BookmarkModel = model<Bookmark>('Bookmark', bookmarkSchema);
 
 export async function get(bookmarkId: string): Promise<Bookmark> {
 	const bookmark = await BookmarkModel.findById(bookmarkId);

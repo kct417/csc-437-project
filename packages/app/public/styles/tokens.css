@@ -1,0 +1,55 @@
+:root {
+	/* ---------- Base Colors (Light Mode) ---------- */
+	--color-bg: #f0f1f3;
+	--color-surface: #f7f8fa;
+	--color-card-surface: #ffffff;
+	--color-text: #1e1e1e;
+	--color-primary: #2563eb; /* blue accent */
+	--color-secondary: #e2e8f0; /* secondary button background */
+	--color-danger: #dc2626;
+	--color-primary-hover: #3b82f6;
+	--color-border: #e2e8f0; /* light borders */
+
+	/* ---------- Spacing ---------- */
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 1rem;
+	--space-lg: 2rem;
+	--space-xl: 3rem;
+
+	/* ---------- Border Radius ---------- */
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
+
+	/* ---------- Shadows ---------- */
+	--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 6px 16px rgba(0, 0, 0, 0.2);
+	--shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.3);
+
+	/* ---------- Typography ---------- */
+	--font-sans: 'Inter', 'Segoe UI', Roboto, sans-serif;
+	--font-serif: 'Playfair Display', Georgia, serif;
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-md: 1rem;
+	--font-size-lg: 1.25rem;
+	--font-size-xl: 2rem;
+	--font-size-xxl: 3rem;
+	--font-weight-regular: 400;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+}
+
+.dark-mode {
+	/* ---------- Dark Mode Colors ---------- */
+	--color-bg: #0a0a0a; /* page background */
+	--color-surface: #1a1a1a; /* lighter than bg for content wrapper */
+	--color-card-surface: #262626; /* lighter than wrapper for cards */
+	--color-text: #f5f5f5;
+	--color-primary: #3b82f6; /* vibrant blue */
+	--color-secondary: #2a2a2a; /* slightly lighter than background so text is readable */
+	--color-danger: #ef4444;
+	--color-primary-hover: #60a5fa;
+	--color-border: #333333; /* dark borders */
+}

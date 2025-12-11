@@ -6,10 +6,18 @@ import Libraries from '../services/library-svc';
 const router = express.Router();
 
 router.get('/', (req: Request, res: Response) => {
-	const { userId } = (req as any).user;
-	Libraries.get(userId)
+	const username = res.locals.username;
+	console.log(username);
+	Libraries.get(username)
 		.then((user: Library) => res.json(user))
-		.catch((error) => res.status(404).send(error));
+		.catch((error) => {
+			Libraries.create(username)
+				.then((user: Library) => res.status(201).json(user))
+				.catch((error) => {
+					console.log(error);
+					res.status(500).send(error);
+				});
+		});
 });
 
 export default router;

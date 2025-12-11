@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { Schema, model, Types } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 import { Credential } from '../models/credential';
 
@@ -25,10 +25,7 @@ export const credentialModel = model<Credential>(
 	credentialSchema
 );
 
-export async function create(
-	username: string,
-	password: string
-): Promise<Types.ObjectId> {
+async function create(username: string, password: string): Promise<Credential> {
 	return credentialModel
 		.find({ username })
 		.then((found: Credential[]) => {
@@ -43,16 +40,12 @@ export async function create(
 						username,
 						hashedPassword,
 					});
-					creds.save();
-					return creds._id;
+					return creds.save();
 				})
 		);
 }
 
-export async function verify(
-	username: string,
-	password: string
-): Promise<Types.ObjectId> {
+async function verify(username: string, password: string): Promise<string> {
 	return credentialModel
 		.find({ username })
 		.then((found) => {
@@ -65,8 +58,7 @@ export async function verify(
 				.compare(password, credsOnFile.hashedPassword)
 				.then((result: boolean) => {
 					if (!result) throw 'Invalid username or password';
-					if (!credsOnFile._id) throw 'Invalid credentials';
-					return credsOnFile._id;
+					return credsOnFile.username;
 				})
 		);
 }
